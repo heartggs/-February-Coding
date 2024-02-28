@@ -1,0 +1,103 @@
+@import "./reset.css";
+
+@font-face {
+  font-family: "title-font";
+  src: url("../assets//fonts/kindergarten.eot"); /* IE9 Compat Modes */
+  src: url("../assets//fonts/kindergarten.woff2") format("woff2"),
+    url("../assets//fonts/kindergarten.woff") format("woff"),
+    url("../assets//fonts/kindergarten.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body,
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: title-font;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.paper {
+  position: absolute;
+}
+
+.title {
+  position: absolute;
+  top: 39.5%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  font-weight: normal;
+  color: #45484c;
+}
+
+.cover-back {
+  display: none;
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: #45484c;
+}
+
+.start-button {
+  position: absolute;
+  bottom: 5%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+
+  border: 3px solid #000;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgb(250, 241, 162, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.start-button:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(165, 226, 102, 1) 100%
+  );
+}
+
+.container {
+  perspective: 1000px;
+  z-index: 999;
+}
+
+.flip-container {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  transform-origin: left;
+}
+
+.flip {
+  transform: rotateY(-180deg);
+}
+
+@keyframes scaleUp {
+  to {
+    transform: scale(2.7);
+  }
+}
+
+.scale-up {
+  animation: scaleUp 1s forwards;
+}
